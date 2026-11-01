@@ -8,8 +8,14 @@ on:
 concurrency:
   group: issue-triage-${{ github.event.issue.number }}
   cancel-in-progress: true
-engine: copilot
-model: gpt-4o-mini
+engine:
+  id: copilot
+  model: gpt-4o-mini
+  args:
+    - "--reasoning-effort"
+    - "none"
+  env:
+    COPILOT_REASONING_EFFORT: "none"
 timeout-minutes: 5
 permissions:
   contents: read

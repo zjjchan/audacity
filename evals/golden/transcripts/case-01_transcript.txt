@@ -1,0 +1,127 @@
+======================================================================
+AUDACITY ISSUE TRIAGE TRANSCRIPT - CASE-01 (Issue #12625)
+======================================================================
+
+1. ISSUE INGESTION
+----------------------------------------------------------------------
+Issue Number: 12625
+Title: Crash when switching workspaces
+User: dozzzzer
+Created At: 2026-10-29T10:24:08Z
+State: closed
+Initial Labels: ["crash / freeze", "bug"]
+Body:
+_The STRs are quite long for now; I will trim a few things once I'm done refining_
+
+1. New project (Ctrl+N) **A**
+2. New 48 kHz track 
+3. Generate 3 noise clips on the track, copy them
+4. New project (Ctrl+N) **B**
+5. Generate a chirp
+6. Paste (Ctrl+V) alongside the chirp
+7. Play, stop
+8. Close the source project **A**
+9. Switch workspace by selecting a different one in the dropdown in the top right
+10. Observe: it crashes Audacity.
+
+Logs: 
+[Audacity_261029_110609.log](https://github.com/user-attachments/files/34129693/Audacity_261029_110609.log)
+[Audacity_261029_103417.log](https://github.com/user-attachments/files/34129694/Audacity_261029_103417.log)
+
+
+2. SECURITY & BOUNDARY CHECK
+----------------------------------------------------------------------
+Untrusted Content Scan: Checked title and body for prompt injection, override directives, or malicious commands.
+Result: Clean. No prompt injection found.
+Role Check: Classify and propose labels/comment only. Do not close or delete issue.
+
+
+3. NO-ACTION EVALUATION
+----------------------------------------------------------------------
+Trusted bot: No.
+Maintainer task with full scope & complete triage: Subsystem "UI" not assigned; candidate duplicate needs linking.
+Action Required: true.
+
+
+4. CLASSIFICATION & SUB-SYSTEMS
+----------------------------------------------------------------------
+Issue Type: Audacity 4 bug -> "bug"
+Subsystem: Workspace switching in top right dropdown -> "UI"
+Severity: App crash -> "crash / freeze"
+Platform: Not OS specific (general UI workspace crash)
+
+
+5. DUPLICATE SEARCH TOOL EXECUTION
+----------------------------------------------------------------------
+Command:
+python .claude/skills/issue-triage/scripts/search_duplicates.py "Crash when switching workspaces" "Switch workspace by selecting a different one in the dropdown. Observe: it crashes Audacity." "12625"
+
+Tool Output:
+{
+  "query_title": "Crash when switching workspaces",
+  "duplicates_found": true,
+  "candidates": [
+    {
+      "number": 12606,
+      "title": "Crash on dock layout rebuild (workspace switch, closing project) after the first window is closed",
+      "url": "https://github.com/audacity/audacity/issues/12606",
+      "score": 0.38,
+      "matched_terms": [
+        "workspace",
+        "switch",
+        "crash"
+      ]
+    }
+  ]
+}
+
+Duplicate Analysis:
+Candidate #12606 matched with score 0.38 (>= 0.3 threshold). Symptoms match dock layout rebuild and workspace switching crash when another project window was closed.
+Decision: duplicate_of = 12606. Add advisory comment referencing #12606.
+
+
+6. COMPLETENESS & REPRODUCTION CHECK
+----------------------------------------------------------------------
+Steps to Reproduce: Fully detailed (10 steps provided).
+Logs: Attached.
+Missing Info: false.
+
+
+7. LABEL VALIDATION TOOL EXECUTION
+----------------------------------------------------------------------
+Candidate Labels: "bug, crash / freeze, UI"
+Command:
+python .claude/skills/issue-triage/scripts/validate_labels.py "bug, crash / freeze, UI"
+
+Tool Output:
+{
+  "valid": [
+    "bug",
+    "crash / freeze",
+    "UI"
+  ],
+  "invalid": [],
+  "reasons": [],
+  "approved": true
+}
+
+Validation Result: All 3 labels approved under whitelist and max limit.
+
+
+8. FINAL OUTPUT GENERATION
+----------------------------------------------------------------------
+Output JSON:
+{
+  "issue_number": 12625,
+  "action_required": true,
+  "labels": [
+    "bug",
+    "crash / freeze",
+    "UI"
+  ],
+  "missing_info": false,
+  "duplicate_of": 12606,
+  "comment": "This report may be related to or a duplicate of #12606 (Crash on dock layout rebuild (workspace switch, closing project) after the first window is closed). Please check if your issue matches the symptoms described there.",
+  "reasoning": "Clear crash report in Audacity 4 UI/workspace switching with full steps. Matches prior open issue #12606 on workspace switch crashes; agent should link candidate duplicate."
+}
+======================================================================

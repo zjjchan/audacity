@@ -1,0 +1,13 @@
+{
+  "issue_number": 12624,
+  "action_required": true,
+  "labels": [
+    "AU3-bug",
+    "Audio Engine",
+    "Tracks"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Audacity 3 legacy bug affecting clip sample rate conversion and track loudness."
+}

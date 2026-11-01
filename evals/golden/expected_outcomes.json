@@ -4,25 +4,27 @@
       "id": "CASE-01",
       "issue_number": 12625,
       "title": "Crash when switching workspaces",
-      "category": "Crash / Freeze Bug",
+      "category": "Crash / Freeze Bug (Duplicate Candidate)",
       "action_required": true,
       "expected_labels": ["bug", "crash / freeze", "UI"],
       "missing_info": false,
-      "duplicate_of": null,
-      "expected_comment": false,
-      "rationale": "Clear, reproducible crash report in Audacity 4 UI/workspace switching with full steps. No info missing, no comment needed."
+      "duplicate_of": 12606,
+      "expected_comment": true,
+      "comment_intent": "Flag candidate duplicate issue #12606 ('Crash on dock layout rebuild (workspace switch, closing project) after the first window is closed') and ask author to verify.",
+      "rationale": "Clear crash report in Audacity 4 UI/workspace switching with full steps. Matches prior open issue #12606 on workspace switch crashes; agent should link candidate duplicate."
     },
     {
       "id": "CASE-02",
       "issue_number": 12626,
       "title": "Project gets corrupted if compaction step is cancelled",
-      "category": "Data Corruption Bug",
+      "category": "Data Corruption Bug (Duplicate Candidate)",
       "action_required": true,
       "expected_labels": ["bug"],
       "missing_info": false,
-      "duplicate_of": null,
-      "expected_comment": false,
-      "rationale": "High severity database compaction corruption report with full steps and reproduction details."
+      "duplicate_of": 10500,
+      "expected_comment": true,
+      "comment_intent": "Flag candidate duplicate issue #10500 ('Project corrupted when pressing cancel during compacting project') and ask author to verify.",
+      "rationale": "High severity database compaction corruption report. Matches prior open issue #10500 on cancelling compaction; agent should link candidate duplicate."
     },
     {
       "id": "CASE-03",

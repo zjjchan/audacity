@@ -1,0 +1,13 @@
+{
+  "issue_number": 12588,
+  "action_required": true,
+  "labels": [
+    "bug",
+    "crash / freeze",
+    "Cloud"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Reproducible crash when cloud sync conflict dialog is invoked."
+}

@@ -1,0 +1,11 @@
+{
+  "issue_number": 11519,
+  "action_required": true,
+  "labels": [
+    "Enhancement Request"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Clear feature enhancement request for Audacity 4. Must NOT be classified as bug."
+}

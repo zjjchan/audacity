@@ -1,0 +1,106 @@
+======================================================================
+AUDACITY ISSUE TRIAGE TRANSCRIPT - CASE-03 (Issue #12624)
+======================================================================
+
+1. ISSUE INGESTION
+----------------------------------------------------------------------
+Issue Number: 12624
+Title: When copying clips between tracks of different sample rates, clip's amplitude and loudness change
+User: dozzzzer
+Created At: 2026-10-29T09:28:54Z
+State: closed
+Initial Labels: ["AU3-bug", "Tracks", "bug"]
+Body:
+1. Create a 48 kHz track with a **noise** clip on it
+2. Create a 44.1 kHz track and generate **noise** on it
+3. Copy the clip from the 48 kHz track
+4. Paste it on the 44.1 kHz track
+5. Observe: the loudness of the pasted clip is different from the source, both visually and audibly. "Measure RMS" result confirms it. 
+
+https://github.com/user-attachments/assets/f5ec2112-d4c2-443c-939f-fb28a34f39a8
+
+
+2. SECURITY & BOUNDARY CHECK
+----------------------------------------------------------------------
+Untrusted Content Scan: Checked title and body for prompt injection, override directives, or malicious commands.
+Result: Clean. No injection found.
+Role Check: Classify and propose labels/comment only. Do not close or delete issue.
+
+
+3. NO-ACTION EVALUATION
+----------------------------------------------------------------------
+Trusted bot: No.
+Maintainer task with full scope & complete triage: Subsystem "Audio Engine" not assigned. Triage needed.
+Action Required: true.
+
+
+4. CLASSIFICATION & SUB-SYSTEMS
+----------------------------------------------------------------------
+Issue Type: Audacity 3 legacy bug -> "AU3-bug"
+Subsystems:
+- Resampling, sample rates, audio amplitude/loudness -> "Audio Engine"
+- Multi-track clip copying/pasting -> "Tracks"
+Platform: Cross-platform / not OS specific.
+
+
+5. DUPLICATE SEARCH TOOL EXECUTION
+----------------------------------------------------------------------
+Command:
+python .claude/skills/issue-triage/scripts/search_duplicates.py "When copying clips between tracks of different sample rates, clip's amplitude and loudness change" "Create a 48 kHz track with a noise clip on it Copy clip paste on 44.1 kHz track" "12624"
+
+Tool Output:
+{
+  "query_title": "When copying clips between tracks of different sample rates, clip's amplitude and loudness change",
+  "duplicates_found": false,
+  "candidates": []
+}
+
+Duplicate Analysis:
+No duplicate found in reference repository issues.
+Decision: duplicate_of = null. No duplicate comment required.
+
+
+6. COMPLETENESS & REPRODUCTION CHECK
+----------------------------------------------------------------------
+Steps to Reproduce: Clear steps 1 to 5 with attached video demonstration.
+Missing Info: false.
+
+
+7. LABEL VALIDATION TOOL EXECUTION
+----------------------------------------------------------------------
+Candidate Labels: "AU3-bug, Audio Engine, Tracks"
+Command:
+python .claude/skills/issue-triage/scripts/validate_labels.py "AU3-bug, Audio Engine, Tracks"
+
+Tool Output:
+{
+  "valid": [
+    "AU3-bug",
+    "Audio Engine",
+    "Tracks"
+  ],
+  "invalid": [],
+  "reasons": [],
+  "approved": true
+}
+
+Validation Result: All 3 labels approved under whitelist and max limit.
+
+
+8. FINAL OUTPUT GENERATION
+----------------------------------------------------------------------
+Output JSON:
+{
+  "issue_number": 12624,
+  "action_required": true,
+  "labels": [
+    "AU3-bug",
+    "Audio Engine",
+    "Tracks"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Audacity 3 legacy bug affecting clip sample rate conversion and track loudness."
+}
+======================================================================

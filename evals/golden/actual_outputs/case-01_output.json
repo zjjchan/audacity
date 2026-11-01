@@ -1,0 +1,13 @@
+{
+  "issue_number": 12625,
+  "action_required": true,
+  "labels": [
+    "bug",
+    "crash / freeze",
+    "UI"
+  ],
+  "missing_info": false,
+  "duplicate_of": 12606,
+  "comment": "This report may be related to or a duplicate of #12606 (Crash on dock layout rebuild (workspace switch, closing project) after the first window is closed). Please check if your issue matches the symptoms described there.",
+  "reasoning": "Clear crash report in Audacity 4 UI/workspace switching with full steps. Matches prior open issue #12606 on workspace switch crashes; agent should link candidate duplicate."
+}

@@ -1,0 +1,11 @@
+{
+  "issue_number": 12626,
+  "action_required": true,
+  "labels": [
+    "bug"
+  ],
+  "missing_info": false,
+  "duplicate_of": 10500,
+  "comment": "This report may be related to or a duplicate of #10500 (Project corrupted when pressing cancel during compacting project). Please check if your issue matches the symptoms described there.",
+  "reasoning": "High severity database compaction corruption report. Matches prior open issue #10500 on cancelling compaction; agent should link candidate duplicate."
+}

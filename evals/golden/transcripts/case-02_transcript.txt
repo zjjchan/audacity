@@ -1,0 +1,138 @@
+======================================================================
+AUDACITY ISSUE TRIAGE TRANSCRIPT - CASE-02 (Issue #12626)
+======================================================================
+
+1. ISSUE INGESTION
+----------------------------------------------------------------------
+Issue Number: 12626
+Title: Project gets corrupted if compaction step is cancelled
+User: kryksyh
+Created At: 2026-10-29T10:57:32Z
+State: closed
+Initial Labels: ["bug"]
+Body:
+### Bug description
+_No response_
+
+### Steps to reproduce
+1. Create a new project
+2. Generate 5 hour chirp
+3. Save and close the project
+4. Open the project
+5. Apply amplify
+6. Save and discard changes
+7. When Compaction dialog shows, click cancel
+8. Wait till the project is closed
+9. Open the project
+
+### Expected behavior
+The project should open at the original save state
+
+### Actual behavior
+The project does not open
+
+### Audacity Version
+Audacity 4.0.1 / Master
+
+### Operating system
+OS independent
+
+### Additional context
+_No response_
+
+
+2. SECURITY & BOUNDARY CHECK
+----------------------------------------------------------------------
+Untrusted Content Scan: Checked title and body for prompt injection, override directives, or malicious commands.
+Result: Clean. No injection found.
+Role Check: Classify and propose labels/comment only. Do not close or delete issue.
+
+
+3. NO-ACTION EVALUATION
+----------------------------------------------------------------------
+Trusted bot: No.
+Maintainer task with full scope & complete triage: Candidate duplicate needs identification and linking.
+Action Required: true.
+
+
+4. CLASSIFICATION & SUB-SYSTEMS
+----------------------------------------------------------------------
+Issue Type: Audacity 4 bug -> "bug"
+Audacity Version: 4.0.1 / Master
+Subsystem: Project database / compaction file I/O
+Platform: OS independent
+
+
+5. DUPLICATE SEARCH TOOL EXECUTION
+----------------------------------------------------------------------
+Command:
+python .claude/skills/issue-triage/scripts/search_duplicates.py "Project gets corrupted if compaction step is cancelled" "When Compaction dialog shows click cancel project does not open corrupt" "12626"
+
+Tool Output:
+{
+  "query_title": "Project gets corrupted if compaction step is cancelled",
+  "duplicates_found": true,
+  "candidates": [
+    {
+      "number": 10500,
+      "title": "Project corrupted when pressing cancel during compacting project",
+      "url": "https://github.com/audacity/audacity/issues/10500",
+      "score": 0.5,
+      "matched_terms": [
+        "project",
+        "compac",
+        "cancel",
+        "corrupt"
+      ]
+    }
+  ]
+}
+
+Duplicate Analysis:
+Candidate #10500 matched with score 0.5 (>= 0.3 threshold). Symptoms exactly describe project corruption when compaction is cancelled during project close.
+Decision: duplicate_of = 10500. Add advisory comment referencing #10500.
+
+
+6. COMPLETENESS & REPRODUCTION CHECK
+----------------------------------------------------------------------
+Steps to Reproduce: Complete (9 steps provided).
+Expected / Actual Behavior: Specified.
+Audacity Version: 4.0.1 / Master provided.
+OS: OS independent.
+Missing Info: false.
+
+
+7. LABEL VALIDATION TOOL EXECUTION
+----------------------------------------------------------------------
+Candidate Labels: "bug"
+Command:
+python .claude/skills/issue-triage/scripts/validate_labels.py "bug"
+
+Tool Output:
+{
+  "valid": [
+    "bug"
+  ],
+  "invalid": [],
+  "reasons": [],
+  "approved": true
+}
+
+Validation Result: Label "bug" approved under whitelist.
+
+
+8. FINAL OUTPUT GENERATION
+----------------------------------------------------------------------
+Output JSON:
+{
+  "issue_number": 12626,
+  "action_required": true,
+  "labels": [
+    "bug"
+  ],
+  "missing_info": false,
+  "duplicate_of": 10500,
+  "comment": "This report may be related to or a duplicate of #10500 (Project corrupted when pressing cancel during compacting project). Please check if your issue matches the symptoms described there.",
+  "reasoning": "High severity database compaction corruption report. Matches prior open issue #10500 on cancelling compaction; agent should link candidate duplicate."
+}
+======================================================================

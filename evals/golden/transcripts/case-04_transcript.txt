@@ -1,0 +1,123 @@
+======================================================================
+AUDACITY ISSUE TRIAGE TRANSCRIPT - CASE-04 (Issue #12620)
+======================================================================
+
+1. ISSUE INGESTION
+----------------------------------------------------------------------
+Issue Number: 12620
+Title: Audacity 3.7.9: 'Snap' to CDDA frames (75 fps) does not work. All the other options work.
+User: ladonnadaniels1983-jpg
+Created At: 2026-10-28T20:01:18Z
+State: open
+Initial Labels: ["AU3-bug"]
+Body:
+### Is this bug reproducible in Audacity 4?
+No
+
+### Bug description
+Snap to CDDA frames (75 fps) does not work in 3.7.9. It actually hasn't worked for a long time. All the other 'Snap' options work just fine. 
+
+### Steps to reproduce
+1. Open an audio file.
+2. Click on Snap checkbox
+3. Select CD frames > CDDA frames (75 fps)
+4. Try to select a range in the waveform and it will just allow you to select anything. It doesn't snap to the proper frames, so exported files will almost always have an SBE error when burning to a disc. This used to work. Not anymore. Not sure which 3.x update broke it.
+
+### Expected behavior
+The waveform selection should snap to the next CDDA frame
+
+### Actual behavior
+It just allows me to select whichever part, so cuts/edits don't align with CDDA frames
+
+### Audacity Version
+Audacity 3.7.9
+
+### Operating system
+Windows
+
+### Additional context
+_No response_
+
+
+2. SECURITY & BOUNDARY CHECK
+----------------------------------------------------------------------
+Untrusted Content Scan: Checked title and body for prompt injection, override directives, or malicious commands.
+Result: Clean. No injection found.
+Role Check: Classify and propose labels/comment only. Do not close or delete issue.
+
+
+3. NO-ACTION EVALUATION
+----------------------------------------------------------------------
+Trusted bot: No.
+Maintainer task with full scope & complete triage: Subsystem "UI" not assigned yet. Triage needed.
+Action Required: true.
+
+
+4. CLASSIFICATION & SUB-SYSTEMS
+----------------------------------------------------------------------
+Issue Type: Audacity 3 bug -> "AU3-bug" (explicitly states 3.7.9 and "No" for Au4).
+Subsystem: Timeline snapping, snap toolbar, waveform selection -> "UI"
+Platform: Windows (specified, but UI component classification takes precedence within 3-label limit).
+
+
+5. DUPLICATE SEARCH TOOL EXECUTION
+----------------------------------------------------------------------
+Command:
+python .claude/skills/issue-triage/scripts/search_duplicates.py "Audacity 3.7.9: 'Snap' to CDDA frames (75 fps) does not work. All the other options work." "Snap to CDDA frames (75 fps) does not work in 3.7.9" "12620"
+
+Tool Output:
+{
+  "query_title": "Audacity 3.7.9: 'Snap' to CDDA frames (75 fps) does not work. All the other options work.",
+  "duplicates_found": false,
+  "candidates": []
+}
+
+Duplicate Analysis:
+No duplicates found.
+Decision: duplicate_of = null.
+
+
+6. COMPLETENESS & REPRODUCTION CHECK
+----------------------------------------------------------------------
+Steps to Reproduce: Clear steps 1 to 4.
+Version: Audacity 3.7.9.
+Operating System: Windows.
+Missing Info: false.
+
+
+7. LABEL VALIDATION TOOL EXECUTION
+----------------------------------------------------------------------
+Candidate Labels: "AU3-bug, UI"
+Command:
+python .claude/skills/issue-triage/scripts/validate_labels.py "AU3-bug, UI"
+
+Tool Output:
+{
+  "valid": [
+    "AU3-bug",
+    "UI"
+  ],
+  "invalid": [],
+  "reasons": [],
+  "approved": true
+}
+
+Validation Result: Both labels approved under whitelist.
+
+
+8. FINAL OUTPUT GENERATION
+----------------------------------------------------------------------
+Output JSON:
+{
+  "issue_number": 12620,
+  "action_required": true,
+  "labels": [
+    "AU3-bug",
+    "UI"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Audacity 3.7.9 specific bug on timeline grid frame snapping."
+}
+======================================================================

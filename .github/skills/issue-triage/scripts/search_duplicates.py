@@ -9,7 +9,7 @@ import sys
 import json
 import re
 
-# Curated reference index of known frequently-reported or representative Audacity issues
+# Curated reference index of past frequently-reported or representative Audacity issues
 REFERENCE_ISSUES = [
     {
         "number": 12109,
@@ -18,40 +18,16 @@ REFERENCE_ISSUES = [
         "url": "https://github.com/audacity/audacity/issues/12109"
     },
     {
-        "number": 12625,
-        "title": "Crash when switching workspaces",
-        "keywords": ["crash", "workspace", "switch", "freeze", "hang", "qml"],
-        "url": "https://github.com/audacity/audacity/issues/12625"
+        "number": 12606,
+        "title": "Crash on dock layout rebuild (workspace switch, closing project) after the first window is closed",
+        "keywords": ["crash", "dock", "layout", "workspace", "switch", "freeze", "hang", "window"],
+        "url": "https://github.com/audacity/audacity/issues/12606"
     },
     {
-        "number": 12626,
-        "title": "Project gets corrupted if compaction step is cancelled",
-        "keywords": ["corrupt", "compaction", "cancel", "database", "sqlite", "project", "aup3"],
-        "url": "https://github.com/audacity/audacity/issues/12626"
-    },
-    {
-        "number": 12620,
-        "title": "Audacity 3.7.9: 'Snap' to CDDA frames (75 fps) does not work",
-        "keywords": ["snap", "cdda", "frames", "75 fps", "grid", "timeline", "snap to"],
-        "url": "https://github.com/audacity/audacity/issues/12620"
-    },
-    {
-        "number": 12588,
-        "title": "Cloud conflict resolution crashes the app",
-        "keywords": ["cloud", "conflict", "resolution", "crash", "audio.com", "sync"],
-        "url": "https://github.com/audacity/audacity/issues/12588"
-    },
-    {
-        "number": 12439,
-        "title": "The export menu is desactivated",
-        "keywords": ["export", "menu", "desactivated", "disabled", "greyed out", "cannot export"],
-        "url": "https://github.com/audacity/audacity/issues/12439"
-    },
-    {
-        "number": 12624,
-        "title": "When copying clips between tracks of different sample rates, clip's amplitude and loudness change",
-        "keywords": ["sample rate", "resample", "amplitude", "loudness", "copy", "paste", "clips"],
-        "url": "https://github.com/audacity/audacity/issues/12624"
+        "number": 10500,
+        "title": "Project corrupted when pressing cancel during compacting project",
+        "keywords": ["corrupt", "compaction", "cancel", "database", "sqlite", "project", "aup3", "close"],
+        "url": "https://github.com/audacity/audacity/issues/10500"
     }
 ]
 
@@ -67,11 +43,13 @@ def tokenize(text):
     stop_words = {"the", "and", "for", "with", "this", "that", "from", "when", "then", "into", "audacity"}
     return [normalize_stem(w) for w in words if w not in stop_words]
 
-def search_duplicates(title, body=""):
+def search_duplicates(title, body="", exclude_number=None):
     tokens = set(tokenize(f"{title} {body}"))
     results = []
 
     for issue in REFERENCE_ISSUES:
+        if exclude_number and str(issue["number"]) == str(exclude_number):
+            continue
         issue_keywords = set([normalize_stem(k) for k in issue["keywords"]])
         overlap = tokens.intersection(issue_keywords)
         if overlap:
@@ -99,7 +77,8 @@ def main():
 
     title = sys.argv[1]
     body = sys.argv[2] if len(sys.argv) > 2 else ""
-    result = search_duplicates(title, body)
+    exclude_number = sys.argv[3] if len(sys.argv) > 3 else None
+    result = search_duplicates(title, body, exclude_number)
     print(json.dumps(result, indent=2))
 
 if __name__ == "__main__":

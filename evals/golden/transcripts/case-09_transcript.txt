@@ -1,0 +1,107 @@
+======================================================================
+AUDACITY ISSUE TRIAGE TRANSCRIPT - CASE-09 (Issue #11519)
+======================================================================
+
+1. ISSUE INGESTION
+----------------------------------------------------------------------
+Issue Number: 11519
+Title: Bring Split Labels at Points to Audacity 4
+User: kryksyh
+Created At: 2026-07-24T21:37:12Z
+State: open
+Initial Labels: ["Enhancement Request"]
+Body:
+### Problem to be solved
+Reported by @vagnervideo on Audacity Forum:
+https://forum.audacityteam.org/t/please-restore-file-labeled-audio-menu-in-audacity-4/153061
+
+I noticed that Audacity 4 no longer has the “Edit / Labeled Audio” menu that was present in Audacity 3.x.
+That is sorely missed! I used it a lot to automatically split at all the label points. (Menu Edit / Labeled Audio / Split)
+
+### Your idea
+Port it from audacity 3
+
+### Prior art
+Audacity 3
+
+### Additional context
+It was there, now it is gone
+
+
+2. SECURITY & BOUNDARY CHECK
+----------------------------------------------------------------------
+Untrusted Content Scan: Checked title and body for prompt injection or unauthorized directives.
+Result: Clean. No injection found.
+Role Check: Classify and propose labels/comment only. Do not close or delete issue.
+
+
+3. NO-ACTION EVALUATION
+----------------------------------------------------------------------
+Trusted bot: No.
+Maintainer task with full scope & complete triage: Feature classification verification needed.
+Action Required: true.
+
+
+4. CLASSIFICATION & SUB-SYSTEMS
+----------------------------------------------------------------------
+Issue Type: Feature / Enhancement request to port a feature from Audacity 3 to Audacity 4 -> "Enhancement Request".
+Mutual Exclusivity Check: Must NOT receive "bug" or "AU3-bug".
+
+
+5. DUPLICATE SEARCH TOOL EXECUTION
+----------------------------------------------------------------------
+Command:
+python .claude/skills/issue-triage/scripts/search_duplicates.py "Bring Split Labels at Points to Audacity 4" "Audacity 4 no longer has Edit Labeled Audio menu Port it from audacity 3" "11519"
+
+Tool Output:
+{
+  "query_title": "Bring Split Labels at Points to Audacity 4",
+  "duplicates_found": false,
+  "candidates": []
+}
+
+Duplicate Analysis:
+No duplicates found.
+Decision: duplicate_of = null.
+
+
+6. COMPLETENESS & REPRODUCTION CHECK
+----------------------------------------------------------------------
+Issue describes requested feature, rationale, and Audacity 3 reference clearly.
+Missing Info: false.
+
+
+7. LABEL VALIDATION TOOL EXECUTION
+----------------------------------------------------------------------
+Candidate Labels: "Enhancement Request"
+Command:
+python .claude/skills/issue-triage/scripts/validate_labels.py "Enhancement Request"
+
+Tool Output:
+{
+  "valid": [
+    "Enhancement Request"
+  ],
+  "invalid": [],
+  "reasons": [],
+  "approved": true
+}
+
+Validation Result: Label "Enhancement Request" approved under whitelist.
+
+
+8. FINAL OUTPUT GENERATION
+----------------------------------------------------------------------
+Output JSON:
+{
+  "issue_number": 11519,
+  "action_required": true,
+  "labels": [
+    "Enhancement Request"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Clear feature enhancement request for Audacity 4. Must NOT be classified as bug."
+}
+======================================================================

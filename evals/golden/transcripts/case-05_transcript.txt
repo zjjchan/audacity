@@ -1,0 +1,134 @@
+======================================================================
+AUDACITY ISSUE TRIAGE TRANSCRIPT - CASE-05 (Issue #12588)
+======================================================================
+
+1. ISSUE INGESTION
+----------------------------------------------------------------------
+Issue Number: 12588
+Title: Cloud conflict resolution crashes the app
+User: kryksyh
+Created At: 2026-10-26T09:44:22Z
+State: open
+Initial Labels: ["bug"]
+Body:
+### Bug description
+_No response_
+
+### Steps to reproduce
+1. Create a cloud project
+2. Create a couple of snapshots
+3. While the project is open, restore an older snapshot on audio com
+4. Edit and try to save the project
+5. Project version conflict dialog is shown
+6. Select "Discard and open latest"
+7. Unsaved changes dialog pops up. Since we already chose "discard" this is an error
+(Dialog fork a leading to local save, close, crash in DBConnection/ProjectFileIO stack trace)
+
+### Expected behavior
+the app works
+
+### Actual behavior
+the app doesn't work
+
+### Audacity Version
+Audacity 4.0.1
+
+### Operating system
+OS independent
+
+
+2. SECURITY & BOUNDARY CHECK
+----------------------------------------------------------------------
+Untrusted Content Scan: Checked title, body, and embedded images/stack trace for prompt injection, override directives, or malicious commands.
+Result: Clean. No injection found.
+Role Check: Classify and propose labels/comment only. Do not close or delete issue.
+
+
+3. NO-ACTION EVALUATION
+----------------------------------------------------------------------
+Trusted bot: No.
+Maintainer task with full scope & complete triage: Missing subsystem "Cloud" and severity "crash / freeze".
+Action Required: true.
+
+
+4. CLASSIFICATION & SUB-SYSTEMS
+----------------------------------------------------------------------
+Issue Type: Audacity 4 bug -> "bug" (Version: Audacity 4.0.1)
+Severity: Unhandled exception / crash in ProjectFileIO / DBConnection -> "crash / freeze"
+Subsystem: Audio.com cloud snapshot sync and cloud project resolution -> "Cloud"
+Platform: OS independent.
+
+
+5. DUPLICATE SEARCH TOOL EXECUTION
+----------------------------------------------------------------------
+Command:
+python .claude/skills/issue-triage/scripts/search_duplicates.py "Cloud conflict resolution crashes the app" "Create a cloud project restore older snapshot project version conflict dialog close project audacity crashes" "12588"
+
+Tool Output:
+{
+  "query_title": "Cloud conflict resolution crashes the app",
+  "duplicates_found": true,
+  "candidates": [
+    {
+      "number": 10500,
+      "title": "Project corrupted when pressing cancel during compacting project",
+      "url": "https://github.com/audacity/audacity/issues/10500",
+      "score": 0.25,
+      "matched_terms": [
+        "project",
+        "close"
+      ]
+    }
+  ]
+}
+
+Duplicate Analysis:
+Candidate #10500 has a low score (0.25 < 0.3 threshold) and relates to local database compaction cancellation, whereas #12588 is specifically a cloud project snapshot conflict resolution crash.
+Decision: duplicate_of = null.
+
+
+6. COMPLETENESS & REPRODUCTION CHECK
+----------------------------------------------------------------------
+Steps to Reproduce: Highly detailed reproduction steps with screenshots and full stack trace.
+Audacity Version: 4.0.1.
+Missing Info: false.
+
+
+7. LABEL VALIDATION TOOL EXECUTION
+----------------------------------------------------------------------
+Candidate Labels: "bug, crash / freeze, Cloud"
+Command:
+python .claude/skills/issue-triage/scripts/validate_labels.py "bug, crash / freeze, Cloud"
+
+Tool Output:
+{
+  "valid": [
+    "bug",
+    "crash / freeze",
+    "Cloud"
+  ],
+  "invalid": [],
+  "reasons": [],
+  "approved": true
+}
+
+Validation Result: All 3 labels approved under whitelist and max limit.
+
+
+8. FINAL OUTPUT GENERATION
+----------------------------------------------------------------------
+Output JSON:
+{
+  "issue_number": 12588,
+  "action_required": true,
+  "labels": [
+    "bug",
+    "crash / freeze",
+    "Cloud"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Reproducible crash when cloud sync conflict dialog is invoked."
+}
+======================================================================

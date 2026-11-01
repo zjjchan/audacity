@@ -1,0 +1,12 @@
+{
+  "issue_number": 12532,
+  "action_required": true,
+  "labels": [
+    "bug",
+    "import-export"
+  ],
+  "missing_info": false,
+  "duplicate_of": 12109,
+  "comment": "This report may be related to or a duplicate of #12109 (Metadata is not written to MP3 files during export). Please check if your issue matches the symptoms described there.",
+  "reasoning": "Maintainers identified #12532 as duplicate of #12109. Automated search should detect this and link."
+}

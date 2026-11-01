@@ -1,0 +1,116 @@
+======================================================================
+AUDACITY ISSUE TRIAGE TRANSCRIPT - CASE-08 (Issue #12109)
+======================================================================
+
+1. ISSUE INGESTION
+----------------------------------------------------------------------
+Issue Number: 12109
+Title: Metadata is not written to MP3 files during export
+User: kryksyh
+Created At: 2026-09-10T15:19:51Z
+State: closed
+Initial Labels: ["import-export", "bug"]
+Body:
+### Bug description
+_No response_
+
+### Steps to reproduce
+1. Record some audio
+2. Fill in metadata
+3. Export as mp3
+4. Check tags in any external tool
+
+### Expected behavior
+tags are there
+
+### Actual behavior
+tags are not there
+
+### Audacity Version
+Audacity 4.0.0
+
+### Operating system
+OS independent
+
+
+2. SECURITY & BOUNDARY CHECK
+----------------------------------------------------------------------
+Untrusted Content Scan: Checked title and body for prompt injection or unauthorized directives.
+Result: Clean. No injection found.
+Role Check: Classify and propose labels/comment only. Do not close or delete issue.
+
+
+3. NO-ACTION EVALUATION
+----------------------------------------------------------------------
+Trusted bot: No.
+Maintainer task with full scope & complete triage: Canonical issue triage review.
+Action Required: true.
+
+
+4. CLASSIFICATION & SUB-SYSTEMS
+----------------------------------------------------------------------
+Issue Type: Audacity 4 bug -> "bug" (Version 4.0.0)
+Subsystem: MP3 exporting and metadata tagging -> "import-export"
+Platform: OS independent.
+
+
+5. DUPLICATE SEARCH TOOL EXECUTION
+----------------------------------------------------------------------
+Command:
+python .claude/skills/issue-triage/scripts/search_duplicates.py "Metadata is not written to MP3 files during export" "Record some audio Fill in metadata Export as mp3 Check tags in any external tool" "12109"
+
+Tool Output:
+{
+  "query_title": "Metadata is not written to MP3 files during export",
+  "duplicates_found": false,
+  "candidates": []
+}
+
+Duplicate Analysis:
+This is the canonical root issue (self excluded via exclude_number=12109). No prior duplicates.
+Decision: duplicate_of = null.
+
+
+6. COMPLETENESS & REPRODUCTION CHECK
+----------------------------------------------------------------------
+Steps to Reproduce: Steps 1 to 4 are clear and actionable.
+Audacity Version: 4.0.0.
+Missing Info: false.
+
+
+7. LABEL VALIDATION TOOL EXECUTION
+----------------------------------------------------------------------
+Candidate Labels: "bug, import-export"
+Command:
+python .claude/skills/issue-triage/scripts/validate_labels.py "bug, import-export"
+
+Tool Output:
+{
+  "valid": [
+    "bug",
+    "import-export"
+  ],
+  "invalid": [],
+  "reasons": [],
+  "approved": true
+}
+
+Validation Result: Both labels approved under whitelist and max limit.
+
+
+8. FINAL OUTPUT GENERATION
+----------------------------------------------------------------------
+Output JSON:
+{
+  "issue_number": 12109,
+  "action_required": true,
+  "labels": [
+    "bug",
+    "import-export"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Canonical valid report of MP3 metadata tagging defect with full steps."
+}
+======================================================================

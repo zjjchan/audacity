@@ -1,0 +1,12 @@
+{
+  "issue_number": 12109,
+  "action_required": true,
+  "labels": [
+    "bug",
+    "import-export"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Canonical valid report of MP3 metadata tagging defect with full steps."
+}

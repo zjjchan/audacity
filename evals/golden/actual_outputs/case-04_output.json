@@ -1,0 +1,12 @@
+{
+  "issue_number": 12620,
+  "action_required": true,
+  "labels": [
+    "AU3-bug",
+    "UI"
+  ],
+  "missing_info": false,
+  "duplicate_of": null,
+  "comment": null,
+  "reasoning": "Audacity 3.7.9 specific bug on timeline grid frame snapping."
+}

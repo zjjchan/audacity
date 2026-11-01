@@ -9,6 +9,7 @@ concurrency:
   group: issue-triage-${{ github.event.issue.number }}
   cancel-in-progress: true
 engine: copilot
+model: gpt-4o
 timeout-minutes: 5
 permissions:
   contents: read

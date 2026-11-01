@@ -1,0 +1,12 @@
+{
+  "number": 11519,
+  "title": "Bring Split Labels at Points to Audacity 4",
+  "user": "kryksyh",
+  "created_at": "2026-07-24T21:37:12Z",
+  "html_url": "https://github.com/audacity/audacity/issues/11519",
+  "labels": [
+    "Enhancement Request"
+  ],
+  "state": "open",
+  "body": "### Problem to be solved\n\nReported by @vagnervideo on Audacity Forum:\nhttps://forum.audacityteam.org/t/please-restore-file-labeled-audio-menu-in-audacity-4/153061\n\nI noticed that Audacity 4 no longer has the \u201cEdit / Labeled Audio\u201d menu that was present in Audacity 3.x.\n\nThat is sorely missed! I used it a lot to automatically split at all the label points. (Menu Edit / Labeled Audio / Split)\n\n### Your idea\n\nPort it from audacity 3\n\n### Prior art\n\nAudacity 3\n\n### Additional context\n\nIt was there, now it is gone"
+}

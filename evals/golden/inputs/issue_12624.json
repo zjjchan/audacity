@@ -1,0 +1,14 @@
+{
+  "number": 12624,
+  "title": "When copying clips between tracks of different sample rates, clip's amplitude and loudness change",
+  "user": "dozzzzer",
+  "created_at": "2026-10-29T09:28:54Z",
+  "html_url": "https://github.com/audacity/audacity/issues/12624",
+  "labels": [
+    "AU3-bug",
+    "Tracks",
+    "bug"
+  ],
+  "state": "closed",
+  "body": "1. Create a 48 kHz track with a **noise** clip on it\n2. Create a 44.1 kHz track and generate **noise** on it\n3. Copy the clip from the 48 kHz track\n4. Paste it on the 44.1 kHz track\n5. Observe: the loudness of the pasted clip is different from the source, both visually and audibly. \"Measure RMS\" result confirms it. \n\nhttps://github.com/user-attachments/assets/f5ec2112-d4c2-443c-939f-fb28a34f39a8"
+}

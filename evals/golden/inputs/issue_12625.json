@@ -1,0 +1,13 @@
+{
+  "number": 12625,
+  "title": "Crash when switching workspaces",
+  "user": "dozzzzer",
+  "created_at": "2026-10-29T10:24:08Z",
+  "html_url": "https://github.com/audacity/audacity/issues/12625",
+  "labels": [
+    "crash / freeze",
+    "bug"
+  ],
+  "state": "closed",
+  "body": "_The STRs are quite long for now; I will trim a few things once I'm done refining_\n\n1. New project (Ctrl+N) **A**\n2. New 48 kHz track \n3. Generate 3 noise clips on the track, copy them\n4. New project (Ctrl+N) **B**\n5. Generate a chirp\n6. Paste (Ctrl+V) alongside the chirp\n7. Play, stop\n8. Close the source project **A**\n9. Switch workspace by selecting a different one in the dropdown in the top right\n10. Observe: it crashes Audacity.\n\nLogs: \n\n[Audacity_261029_110609.log](https://github.com/user-attachments/files/34129693/Audacity_261029_110609.log)\n[Audacity_261029_103417.log](https://github.com/user-attachments/files/34129694/Audacity_261029_103417.log)\n\n"
+}

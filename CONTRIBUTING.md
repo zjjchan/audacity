@@ -38,3 +38,12 @@ The most active Audacity user community can be found [in the forum](https://foru
 ### Making video tutorials
 
 Video tutorials are very helpful to users, as they tend to be easier to follow than written instructions. When you make video tutorials, make sure to mention which version of Audacity you're using, so that users know what the problem might be should they stumble upon your tutorial after a few years and find that their version of Audacity does very different things to yours.
+
+## AI Contributions and Automated Triage
+
+Audacity embraces responsible AI automation to maintain high software quality:
+
+1. **AI-Assisted Contributions**: Any code, documentation, or bug report produced with AI assistance must strictly comply with [AI_POLICY.md](AI_POLICY.md). Contributors must review all generated code, sign the CLA, and declare AI usage with `Assisted-by: <tool name>` trailers in commit messages.
+2. **Automated Issue Triage**: Newly opened issues are triaged by an automated agent operating under least-privilege permissions. The agent checks for missing reproduction steps, searches for existing duplicates, and proposes classification labels.
+3. **Human Oversight & Escalation**: The triage agent cannot close or delete issues. Its outputs are strictly advisory. If you believe the agent incorrectly classified your issue or requested unnecessary information, simply reply to the thread or request human maintainer review by mentioning `@audacity/maintainers`. Maintainers remain solely accountable for project triage decisions.
+

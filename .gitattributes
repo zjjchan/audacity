@@ -12,3 +12,5 @@
 *.ttl text=auto
 *.aps text=auto
 *.trig text=auto
+
+.github/workflows/*.lock.yml linguist-generated=true

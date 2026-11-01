@@ -1,0 +1,12 @@
+{
+  "number": 12620,
+  "title": "Audacity 3.7.9: 'Snap' to CDDA frames (75 fps) does not work. All the other options work.",
+  "user": "ladonnadaniels1983-jpg",
+  "created_at": "2026-10-28T20:01:18Z",
+  "html_url": "https://github.com/audacity/audacity/issues/12620",
+  "labels": [
+    "AU3-bug"
+  ],
+  "state": "open",
+  "body": "### Is this bug reproducible in Audacity 4?\n\nNo\n\n### Bug description\n\nSnap to CDDA frames (75 fps) does not work in 3.7.9. It actually hasn't worked for a long time. All the other 'Snap' options work just fine. \n\n### Steps to reproduce\n\n1. Open an audio file.\n2. Click on Snap checkbox\n3. Select CD frames > CDDA frames (75 fps)\n4. Try to select a range in the waveform and it will just allow you to select anything. It doesn't snap to the proper frames, so exported files will almost always have an SBE error when burning to a disc. This used to work. Not anymore. Not sure which 3.x update broke it.\n\n### Expected behavior\n\nThe waveform selection should snap to the next CDDA frame\n\n### Actual behavior\n\nIt just allows me to select whichever part, so cuts/edits don't align with CDDA frames\n\n### Audacity Version\n\nAudacity 3.7.9\n\n### Operating system\n\nWindows\n\n### Additional context\n\n_No response_"
+}

@@ -1,0 +1,12 @@
+{
+  "number": 12626,
+  "title": "Project gets corrupted if compaction step is cancelled",
+  "user": "kryksyh",
+  "created_at": "2026-10-29T10:57:32Z",
+  "html_url": "https://github.com/audacity/audacity/issues/12626",
+  "labels": [
+    "bug"
+  ],
+  "state": "closed",
+  "body": "### Bug description\n\n_No response_\n\n### Steps to reproduce\n\n1. Create a new project\n2. Generate 5 hour chirp\n3. Save and close the project\n4. Open the project\n5. Apply amplify\n6. Save and discard changes\n7. When Compaction dialog shows, click cancel\n8. Wait till the project is closed\n9. Open the project\n\n### Expected behavior\n\nThe project should open at the original save state\n\n### Actual behavior\n\nThe project does not open\n\n### Audacity Version\n\nAudacity 4.0.1 / Master\n\n### Operating system\n\nOS independent\n\n### Additional context\n\n_No response_"
+}

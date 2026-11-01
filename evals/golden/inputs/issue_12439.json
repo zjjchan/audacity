@@ -1,0 +1,14 @@
+{
+  "number": 12439,
+  "title": "The export menu is desactivated",
+  "user": "diqunet",
+  "created_at": "2026-10-08T17:16:28Z",
+  "html_url": "https://github.com/audacity/audacity/issues/12439",
+  "labels": [
+    "Could not reproduce",
+    "macOS",
+    "bug"
+  ],
+  "state": "closed",
+  "body": "### Bug description\n\nThe export menu is desactivated by default. \n\n<img width=\"797\" height=\"449\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ed41c2a6-b0e7-4b7a-a9a4-61d69cc83733\" />\n\n### Steps to reproduce\n\n1. open audacity 4\n2. add an audio\n3. The export menu is desactivated by default. I cannot export the audio.\n\n### Expected behavior\n\nThe export menu is enabled. \n\n### Actual behavior\n\n_No response_\n\n### Audacity Version\n\nAudacity 4.0.1\n\n### Operating system\n\nmacOS\n\n### Additional context\n\n_No response_"
+}

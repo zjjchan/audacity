@@ -1,0 +1,13 @@
+{
+  "number": 12109,
+  "title": "Metadata is not written to MP3 files during export",
+  "user": "kryksyh",
+  "created_at": "2026-09-10T15:19:51Z",
+  "html_url": "https://github.com/audacity/audacity/issues/12109",
+  "labels": [
+    "import-export",
+    "bug"
+  ],
+  "state": "closed",
+  "body": "### Bug description\n\n_No response_\n\n### Steps to reproduce\n\n1. Record some audio\n2. Fill in metadata\n3. Export as mp3\n4. Check tags in any external tool\n\n### Expected behavior\n\ntags are there\n\n### Actual behavior\n\ntags are not there\n\n### Audacity Version\n\nAudacity 4.0.0\n\n### Operating system\n\nOS independent\n\n### Additional context\n\n_No response_"
+}
